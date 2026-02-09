@@ -45,7 +45,8 @@ void USSM_StateMachine::UpdateStateMachine(float DeltaTime)
     }
 
     if (!TransitionHappened)
-        States[ActiveState]->UpdateState(DeltaTime);
+        if (ActiveState != 0)
+            States[ActiveState]->UpdateState(DeltaTime);
 
     OnUpdateStateMachine(DeltaTime);
 }

@@ -19,4 +19,7 @@ class SCARLETSTATEMACHINES_API UScarletStateMachines_Utilities : public UBluepri
 	UFUNCTION(BlueprintCallable, Category="ScarletStateMachines")
 	static USSM_StateMachine* CreateStateMachine(TSubclassOf<USSM_StateMachine> StateMachineClass, UObject* Owner, bool AutoInit = true);
 
+	// Constructs a nested state machine state with EmbeddedStateMachineClass inside of it and then adds this state to the StateMachine
+	UFUNCTION(BlueprintCallable, Category = "ScarletStateMachines")
+	static void AddNestedStateMachineState(USSM_StateMachine* StateMachine, uint8 InNewStateID, TSubclassOf<USSM_StateMachine> EmbeddedStateMachineClass);
 };
