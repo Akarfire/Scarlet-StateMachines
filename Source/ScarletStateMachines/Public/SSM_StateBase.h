@@ -58,6 +58,9 @@ public:
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "ScarletStateMachines|State")
 	uint8 GetStateID() { return StateID; }
 
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "ScarletStateMachines|State")
+	const FString& GetDisplayName();
+
 
 	// State Machine management
 

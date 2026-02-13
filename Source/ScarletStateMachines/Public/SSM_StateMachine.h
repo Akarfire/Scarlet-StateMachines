@@ -81,6 +81,10 @@ public:
 	UPROPERTY(BlueprintAssignable, Category="Delegates")
 	FOnStateChangedDelegate OnStateChanged;
 
+	// Display names for every state, 0 is always None
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Default")
+	TArray<FString> StateDisplayNames = {"None"};
+
 protected:
 
 	// TRANSITIONS
@@ -153,6 +157,10 @@ public:
 	// Returs a pointer to the requested state object
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "ScarletStateMachines|StateMachine")
 	TMap<uint8, USSM_StateBase*> GetStates() { return States; }
+
+	// Called every time the state machine is updated (after the main update) (to be overriden)
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "ScarletStateMachines|StateMachine")
+	const TArray<FString>& GetStateDisplayNames() { return StateDisplayNames; }
 
 
 	// TRANSITIONS

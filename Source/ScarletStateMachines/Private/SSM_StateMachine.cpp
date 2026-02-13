@@ -70,6 +70,7 @@ void USSM_StateMachine::StateTransition(uint8 InNewState)
 void USSM_StateMachine::AddNewStateExisting(uint8 InStateID, USSM_StateBase* InState)
 {
     States.Add(InStateID, InState);
+    InState->SetStateID(InStateID);
     InState->STATEMACHINE_SetStateMachine(this);
 }
 

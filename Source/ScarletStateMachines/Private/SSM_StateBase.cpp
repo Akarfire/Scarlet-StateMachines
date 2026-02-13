@@ -17,3 +17,13 @@ void USSM_StateBase::STATEMACHINE_SetStateMachine(USSM_StateMachine* InStateMach
 
     STATEMACHINE_OnSetStateMachine();
 }
+
+const FString& USSM_StateBase::GetDisplayName()
+{
+    if (StateMachine)
+        if (StateMachine->GetStateDisplayNames().IsValidIndex(GetStateID()))
+            return StateMachine->GetStateDisplayNames()[GetStateID()];
+
+    static FString NoNameState = "NoName";
+    return NoNameState;
+}
