@@ -150,6 +150,10 @@ public:
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "ScarletStateMachines|StateMachine")
 	USSM_StateBase* GetState(uint8 InStateID);
 
+	// Returs a pointer to the requested state object
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "ScarletStateMachines|StateMachine")
+	TMap<uint8, USSM_StateBase*> GetStates() { return States; }
+
 
 	// TRANSITIONS
 
