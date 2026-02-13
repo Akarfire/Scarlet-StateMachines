@@ -17,6 +17,7 @@ class SCARLETSTATEMACHINES_API USSM_NestedStateMachineState : public USSM_StateB
 protected:
 
 	// A pointer to the state machine embedded in this state
+	UPROPERTY()
 	class USSM_StateMachine* EmbeddedStateMachine = nullptr;
 
 public:
